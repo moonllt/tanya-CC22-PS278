@@ -12,7 +12,7 @@ mongoose.connect(process.env.access_db, () => console.log("check database"));
 const userRoute = require("./routes/user");
 const authRoute = require("./routes/auth");
 const tiketRoute = require("./routes/TiketBus");
-const transaksiRoute = require("./routes/Transaksi");
+const transaksiRoute = require("./routes/transaksi");
 // const paymentRoute = require("./routes/payment");
 
 //middleware | run when hits routes
