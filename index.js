@@ -26,4 +26,4 @@ app.use("/tanya/transaksi", transaksiRoute);
 // app.use("/tanya/payment", paymentRoute);
 
 //running app
-app.listen(process.env.PORT || 3000, () => console.log("server ok!"));
+app.listen(process.env.PORT || 2000, () => console.log("server ok!"));
