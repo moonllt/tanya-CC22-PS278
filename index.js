@@ -5,6 +5,11 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
+// test
+app.get("/", (req, res) => {
+  res.send("welcome... | tambah /tanya/../...");
+});
+
 //connect DB
 mongoose.connect(process.env.access_db, () => console.log("check database"));
 
@@ -13,6 +18,8 @@ const userRoute = require("./routes/user");
 const authRoute = require("./routes/auth");
 const tiketRoute = require("./routes/TiketBus");
 const transaksiRoute = require("./routes/transaksi");
+const req = require("express/lib/request");
+const res = require("express/lib/response");
 // const paymentRoute = require("./routes/payment");
 
 //middleware | run when hits routes
