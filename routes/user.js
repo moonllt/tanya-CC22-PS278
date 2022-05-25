@@ -16,7 +16,7 @@ router.put("/:userId", verified, async (req, res) => {
 });
 
 //GET all user
-router.get("/", verified, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const allUser = await User.find();
     res.json(allUser);
