@@ -26,4 +26,7 @@ app.use("/tanya/transaksi", transaksiRoute);
 // app.use("/tanya/payment", paymentRoute);
 
 //running app
-app.listen(process.env.PORT || 2000, () => console.log("server ok!"));
+const PORT = process.env.PORT || 2000;
+app.listen(PORT, () => {
+  console.log(`Our app is running on port ${PORT}`);
+});
