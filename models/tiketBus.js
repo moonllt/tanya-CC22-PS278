@@ -16,4 +16,5 @@ const tiketBusSchema = new mongoose.Schema({
     required: true,
   },
 });
+
 module.exports = mongoose.model("tiketBus", tiketBusSchema);
