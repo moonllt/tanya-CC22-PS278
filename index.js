@@ -2,13 +2,18 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const swagger = require("swagger-ui-express");
 
 dotenv.config();
 
 // test
 app.get("/", (req, res) => {
-  res.send("welcome... | tambah /tanya/../...");
+  res.send("welcome... | tambah /tanya/.../...");
 });
+
+// swagger
+const apiDocs = require("./tanyaDocs.json");
+app.use("/tanyaDocs", swagger.serve, swagger.setup(apiDocs));
 
 //connect DB
 mongoose.connect(process.env.access_db, () => console.log("check database"));
