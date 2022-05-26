@@ -1,0 +1,644 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "Tanya CC22-PS278",
+    "contact": {}
+  },
+  "host": "api-tanya.herokuapp.com",
+  "basePath": "/tanya",
+  "securityDefinitions": {},
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/auth/register": {
+      "post": {
+        "summary": "register",
+        "tags": ["user"],
+        "operationId": "register",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/registerrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "summary": "login",
+        "tags": ["user"],
+        "operationId": "login",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "auth-jsonToken",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/loginrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/user": {
+      "get": {
+        "summary": "all user",
+        "tags": ["user"],
+        "operationId": "alluser",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "auth-jsonToken",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/user/{userId}": {
+      "put": {
+        "summary": "update data user [by id]",
+        "tags": ["user"],
+        "operationId": "updatedatauser[byid]",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "auth-jsonToken",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/updatedatauser%5Bbyid%5Drequest"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "summary": "user [by id]",
+        "tags": ["user"],
+        "operationId": "user[byid]",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "auth-jsonToken",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "delete": {
+        "summary": "user [by id]1",
+        "tags": ["user"],
+        "operationId": "user[byid]1",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "auth-jsonToken",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/tiket": {
+      "post": {
+        "summary": "tiket",
+        "tags": ["tiketBus"],
+        "operationId": "tiket",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "auth-jsonToken",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/tiketrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "summary": "all tiket",
+        "tags": ["tiketBus"],
+        "operationId": "alltiket",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "auth-jsonToken",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/tiket/{tiketId}": {
+      "delete": {
+        "summary": "tiket [bus id]",
+        "tags": ["tiketBus"],
+        "operationId": "tiket[busid]",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "auth-jsonToken",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "tiketId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "put": {
+        "summary": "update tiket [bus id]",
+        "tags": ["tiketBus"],
+        "operationId": "updatetiket[busid]",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "auth-jsonToken",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/updatetiket%5Bbusid%5Drequest"
+            }
+          },
+          {
+            "name": "tiketId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "summary": "tiket [bus id]1",
+        "tags": ["tiketBus"],
+        "operationId": "tiket[busid]1",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "auth-jsonToken",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "tiketId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/transaksi": {
+      "post": {
+        "summary": "transaksi",
+        "tags": ["transaksi"],
+        "operationId": "transaksi",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "auth-jsonToken",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/transaksirequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "summary": "all transaksi",
+        "tags": ["transaksi"],
+        "operationId": "alltransaksi",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "auth-jsonToken",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/transaksi/{transaksiId}": {
+      "delete": {
+        "summary": "transaksi [by id]",
+        "tags": ["transaksi"],
+        "operationId": "transaksi[byid]",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "auth-jsonToken",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "transaksiId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "summary": "transaksi [by id]1",
+        "tags": ["transaksi"],
+        "operationId": "transaksi[byid]1",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "auth-jsonToken",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "transaksiId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "put": {
+        "summary": "update transaksi [by id]",
+        "tags": ["transaksi"],
+        "operationId": "updatetransaksi[byid]",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "auth-jsonToken",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "transaksiId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "registerrequest": {
+      "title": "registerrequest",
+      "example": {
+        "username": "severus snape",
+        "email": "always@gmail.com",
+        "password": "lily123"
+      },
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": ["username", "email", "password"]
+    },
+    "loginrequest": {
+      "title": "loginrequest",
+      "example": {
+        "email": "rubeusHagrid@gmail.com",
+        "password": "hagrid"
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": ["email", "password"]
+    },
+    "updatedatauser[byid]request": {
+      "title": "updatedatauser[byid]request",
+      "example": {
+        "username": "rubeus hagrid"
+      },
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string"
+        }
+      },
+      "required": ["username"]
+    },
+    "tiketrequest": {
+      "title": "tiketrequest",
+      "example": {
+        "jenisBus": "bus trans",
+        "desc": "ini bus trans kota",
+        "price": 5000
+      },
+      "type": "object",
+      "properties": {
+        "jenisBus": {
+          "type": "string"
+        },
+        "desc": {
+          "type": "string"
+        },
+        "price": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": ["jenisBus", "desc", "price"]
+    },
+    "updatetiket[busid]request": {
+      "title": "updatetiket[busid]request",
+      "example": {
+        "jenisBus": "Bus reguler"
+      },
+      "type": "object",
+      "properties": {
+        "jenisBus": {
+          "type": "string"
+        }
+      },
+      "required": ["jenisBus"]
+    },
+    "transaksirequest": {
+      "title": "transaksirequest",
+      "example": {
+        "userId": "628725de90ef6afd3c09e187",
+        "tiketBus": [
+          {
+            "tiketId": "6287014b07b1f0515ab86720",
+            "quantity": 2
+          },
+          {
+            "tiketId": "628717b83629f6aab8f2fb77",
+            "quantity": 1
+          }
+        ],
+        "total": "50000"
+      },
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "tiketBus": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TiketBu"
+          }
+        },
+        "total": {
+          "type": "string"
+        }
+      },
+      "required": ["userId", "tiketBus", "total"]
+    },
+    "TiketBu": {
+      "title": "TiketBu",
+      "example": {
+        "tiketId": "6287014b07b1f0515ab86720",
+        "quantity": 2
+      },
+      "type": "object",
+      "properties": {
+        "tiketId": {
+          "type": "string"
+        },
+        "quantity": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": ["tiketId", "quantity"]
+    }
+  },
+  "tags": [
+    {
+      "name": "user"
+    },
+    {
+      "name": "tiketBus"
+    },
+    {
+      "name": "transaksi"
+    }
+  ]
+}
